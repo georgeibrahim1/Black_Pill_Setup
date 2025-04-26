@@ -30,19 +30,17 @@ __main FUNCTION
     ;
     ;TEST1
     ;
+    ;call the functions you need to test
     ;
     ;TEST2
     ;
+    ;call the functions you need to test
     ;
     ;TEST3
     ;
+    ;call the functions you need to test
+    ;
     ;-----------------------
-
-    BL GET_state
-
-    CMP R10 , #1
-
-
 
 
     ENDFUNC

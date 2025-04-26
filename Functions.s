@@ -256,8 +256,13 @@ HIj
 	MOV R0, #0x00  ;SET VCOML TO SMALL VALUE
 	BL TFT_WriteData
 
+
+	;Set screen orientation
 	MOV R0,#0x36
 	BL TFT_WriteCommand
+	
+
+	;RGB/BGR sequence
 	MOV R0,#0x08
 	BL TFT_WriteData
 
@@ -266,7 +271,7 @@ HIj
 	BL TFT_WriteCommand
 	BL delay
 
-	; Display ON
+	; WAKE UP (LISTEN TO RUN/JOJI 3:18) -> PLEASE WAKE UP , HOW DO YOU FEEL ? 
 	MOV R0, #0x29
 	BL TFT_WriteCommand
 
@@ -432,7 +437,7 @@ FillLoopdraw4INP
 
 
 ;-----------------------------------------
-; GET_state  (debounced)
+; GET_state
 ; Get output in R10
 ;-----------------------------------------
 GET_state FUNCTION
@@ -449,7 +454,7 @@ GET_state FUNCTION
 	
 
 ;-----------------------------------------
-; delay , R12 -> INPUT
+; delay
 ;-----------------------------------------
 delay    FUNCTION
     PUSH    {R0-R11,LR}
